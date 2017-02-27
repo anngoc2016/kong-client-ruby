@@ -19,7 +19,7 @@ module Kong
       Excon.defaults[:ssl_verify_peer] = false if ignore_ssl_errors?
       @api_url = api_url
       self.class.http_client = Excon.new(@api_url, omit_default_port: true)
-      @default_headers = { 'Accept' => 'application/json' }
+      @default_headers = { 'Accept' => 'application/json', "Authorization" => "Basic bnR0aW5AZm9zc2lsLmNvbTpVc2VyQDEyMw=="}
     end
 
     def self.api_url
