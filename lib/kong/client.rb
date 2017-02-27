@@ -30,6 +30,10 @@ module Kong
       @api_url = url
       @http_client = Excon.new(self.api_url, omit_default_port: true)
     end
+    
+    def self.default_headers(headers = {})
+      @default_headers.merge(headers)
+    end
 
     def http_client
       self.class.http_client
